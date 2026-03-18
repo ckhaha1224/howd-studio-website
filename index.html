@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Howd Studio - A premium, elegant hair salon. Book your appointment today.">
+    <title>Howd Studio | Hair Salon</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav-links a[href="index.html"]::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-howd">HOWD</span>
+                <span class="logo-studio">STUDIO</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="btn btn-primary book-btn-nav" onclick="openBookingModal()">Book Appointment</button>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home / Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="fade-in-up">Crafting Confidence,<br>One Cut at a Time.</h1>
+                <p class="fade-in-up delay-1">Experience premium hair care in a serene, modern environment.</p>
+                <div class="hero-actions fade-in-up delay-2">
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                    <a href="services.html" class="btn btn-outline">Explore Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brief Intro Section -->
+        <section class="about section bg-light text-center">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Welcome to Howd Studio</h2>
+                    <p>Where minimalist aesthetics meet exceptional hair artistry. Our studio provides a relaxing ambiance bathed in warm lantern glows.</p>
+                </div>
+                <a href="about.html" class="btn btn-outline">Read Our Story</a>
+            </div>
+        </section>
+
+        <!-- Booking Modal -->
+        <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeBookingModal()">&times;</span>
+                <h2>Book Your Appointment</h2>
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" required>
+                            <option value="">-- Choose a Service --</option>
+                            <option value="cut">Cut & Style</option>
+                            <option value="color">Color</option>
+                            <option value="treatment">Treatment</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Select Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Select Time</label>
+                        <select id="time" required>
+                            <option value="">-- Choose a Time --</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Confirm Booking</button>
+                    <p id="bookingSuccessMessage" class="success-message" style="display:none; margin-top:15px; text-align:center; color: var(--success);"></p>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-howd">HOWD</span>
+                    <span class="logo-studio">STUDIO</span>
+                </div>
+                <p>Elevating your presence.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="info-block">
+                    <h4>Visit Us</h4>
+                    <p>123 Serene Avenue<br>Level 2, #02-12<br>City District, 123456</p>
+                </div>
+                <div class="info-block">
+                    <h4>Hours</h4>
+                    <p>Tue - Fri: 10AM - 8PM<br>Sat - Sun: 10AM - 6PM<br>Monday: Closed</p>
+                </div>
+                <div class="info-block">
+                    <h4>Contact</h4>
+                    <p>hello@howdstudio.com<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Howd Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
