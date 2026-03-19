@@ -1,3 +1,15 @@
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+});
+
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');

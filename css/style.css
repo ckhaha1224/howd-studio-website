@@ -357,13 +357,7 @@ img {
     background-position: center;
 }
 
-/* Will add the images after putting them in the project */
-.bg-image-1 {
-    /* To be filled by js/css dynamically or a generated image */
-}
-.bg-image-2 {
-    /* To be filled by js/css dynamically */
-}
+/* Images are applied via inline styles in HTML */
 
 
 /* Footer */
@@ -561,7 +555,25 @@ img {
 }
 
 @media (max-width: 768px) {
-    .nav-links, .book-btn-nav {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: rgba(250, 250, 250, 0.98);
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    .book-btn-nav {
         display: none;
     }
     
